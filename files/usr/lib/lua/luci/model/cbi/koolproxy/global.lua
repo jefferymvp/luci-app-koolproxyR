@@ -387,8 +387,7 @@ function(o,a,i)
 end
 )
 
-t=o:section(TypedSection,"rss_rulee",translate("Technical Support"), 
-	translate("本软件由KPR提供技术支持"))
+t=o:section(TypedSection,"rss_rule",translate("Technical Support"),translate("本软件由KPR提供技术支持"))
 
 t.anonymous = true
 
