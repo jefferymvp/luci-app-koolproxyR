@@ -1,6 +1,5 @@
 
 ## 准备工作：
-<font color=red>
 先运行：</br>
 `opkg install openssl-util  ipset dnsmasq-full diffutils iptables-mod-nat-extra wget ca-bundle ca-certificates libustream-openssl`</br>
 手动安装以上依赖包</br>
@@ -11,9 +10,21 @@
 
 
 
+## 使用方法
+```Brach
+    #源码根目录，进入package文件夹
+    cd package
+    #下载源码
+    git clone https://github.com/Ameykyl/luci-app-koolproxyR
+    #回到源码根目录
+    cd ..
+    make menuconfig
+    #编译
+    make package/luci-app-koolproxyR/{clean,compile} V=s
 
 
-* TG群：https://t.me/joinchat/AAAAAD-tO7GPvfOU131_vg
+
+* TG群：https://t.me/koolproxyR
 
 
 
