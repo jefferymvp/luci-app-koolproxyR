@@ -1,4 +1,5 @@
 wget 'https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kp.dat' -O files/usr/share/koolproxy/data/rules/kp.dat
+wget 'https://github.com/user1121114685/koolproxyR_rule_list/raw/master/kpr_our_rule.txt' -O files/usr/share/koolproxy/data/rules/koolproxy.txt
 wget 'https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/yhosts.txt' -O files/usr/share/koolproxy/data/rules/yhosts.txt
 wget 'https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/fanboy-annoyance.txt' -O files/usr/share/koolproxy/data/rules/fanboy.txt
 wget 'https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/easylistchina.txt' -O files/usr/share/koolproxy/data/rules/easylistchina.txt
