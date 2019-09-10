@@ -15,7 +15,6 @@ local v=luci.sys.exec("/usr/share/koolproxy/koolproxy -v")
 local s=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/easylistchina.txt | wc -l")
 local u=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/fanboy.txt | wc -l")
 local p=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/yhosts.txt | wc -l")
-local l=luci.sys.exec("grep -v !x /usr/share/koolproxy/data/rules/koolproxy.txt | wc -l")
 local h=luci.sys.exec("grep -v '^!' /usr/share/koolproxy/data/rules/user.txt | wc -l")
 local i=luci.sys.exec("cat /usr/share/koolproxy/dnsmasq.adblock | wc -l")
 
@@ -63,7 +62,6 @@ e.rmempty = false
 e:value("easylistchina.txt", translate("ABP规则"))
 e:value("fanboy.txt", translate("fanboy规则"))
 e:value("yhosts.txt", translate("yhosts规则"))
-e:value("koolproxy.txt", translate("补充规则"))
 e:value("kp.dat", translate("视频规则"))
 e:value("user.txt", translate("自定义规则"))
 
@@ -113,7 +111,7 @@ e.write = function()
 	luci.sys.call("/usr/share/koolproxy/kpupdate 2>&1 >/dev/null")
 	luci.http.redirect(luci.dispatcher.build_url("admin","services","koolproxy"))
 end
-e.description = translate(string.format("<font color=\"red\"><strong>更新订阅规则与Adblock Plus Hosts</strong></font><br /><font color=\"green\">ABP规则: %s条<br />fanboy规则: %s条<br />yhosts规则: %s条<br />补充规则: %s条<br />自定义规则: %s条<br />Host: %s条</font><br />", s, u, p, h, i))
+e.description = translate(string.format("<font color=\"red\"><strong>更新订阅规则与Adblock Plus Hosts</strong></font><br /><font color=\"green\">ABP规则: %s条<br />fanboy规则: %s条<br />yhosts规则: %s条<br />自定义规则: %s条<br />Host: %s条</font><br />", s, u, p, h, i))
 t:tab("cert",translate("Certificate Management"))
 
 e=t:taboption("cert",DummyValue,"c1status",translate("<div align=\"left\">Certificate Restore</div>"))
