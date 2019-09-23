@@ -1,7 +1,7 @@
 wget 'https://raw.githubusercontent.com/user1121114685/koolproxyR_rule_list/master/kp.dat' -O files/usr/share/koolproxy/data/rules/kp.dat
 wget 'https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/yhosts.txt' -O files/usr/share/koolproxy/data/rules/yhosts.txt
-wget 'https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/fanboy-annoyance.txt' -O files/usr/share/koolproxy/data/rules/fanboy.txt
-wget 'https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/easylistchina.txt' -O files/usr/share/koolproxy/data/rules/easylistchina.txt
+wget 'https://dev.tencent.com/u/shaoxia1991/p/cjxlist/git/raw/master/cjx-annoyance.txt' -O files/usr/share/koolproxy/data/rules/fanboy.txt
+wget 'https://easylist-downloads.adblockplus.org/easylistchina.txt' -O files/usr/share/koolproxy/data/rules/easylistchina.txt
 
 wget 'https://raw.githubusercontent.com/user1121114685/koolproxyR/master/koolproxyR/koolproxyR/data/rules/user.txt' -O files/usr/share/koolproxy/data/user.txt
 cp files/usr/share/koolproxy/data/user.txt files/usr/share/koolproxy/data/rules/user.txt
