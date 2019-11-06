@@ -1,4 +1,6 @@
 
+修改了kpupdate，使其可以直接更新easylist、fanboy和yhost的规则。
+
 ## 准备工作：
 先运行：</br>
 `opkg install openssl-util  ipset dnsmasq-full diffutils iptables-mod-nat-extra wget ca-bundle ca-certificates libustream-openssl`</br>
