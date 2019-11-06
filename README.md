@@ -17,7 +17,7 @@
     #源码根目录，进入package文件夹
     cd package
     #下载源码
-    git clone https://github.com/Ameykyl/luci-app-koolproxyR
+    git clone https://github.com/jefferymvp/luci-app-koolproxyR
     #回到源码根目录
     cd ..
     make menuconfig
@@ -26,7 +26,7 @@
 
 
 
-* TG群：https://t.me/koolproxyR
+
 
 
 
