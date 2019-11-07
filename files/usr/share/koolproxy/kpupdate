@@ -148,18 +148,20 @@ kpr_update_rules() {
 				koolproxyR_basic_easylist_failed=1
 			fi
 		done
-		for i in {1..5}; do
-			wget -4 -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxy/data/rules/kpr_our_rule.txt $kpr_our_rule
-			kpr_our_rule_nu_local=`grep -E -v "^!" $KSROOT/koolproxy/data/rules/kpr_our_rule.txt | wc -l`
-			if [[ "$kpr_our_rule_nu_local" -gt 500 ]]; then
-				break
-			else
-				echo_date kpr_our_rule规则文件下载失败
-				koolproxyR_basic_easylist_failed=1
-			fi
-		done
+		#for i in {1..5}; do
+		#	wget -4 -a /tmp/upload/kpr_log.txt -O $KSROOT/koolproxy/data/rules/kpr_our_rule.txt $kpr_our_rule
+		#	kpr_our_rule_nu_local=`grep -E -v "^!" $KSROOT/koolproxy/data/rules/kpr_our_rule.txt | wc -l`
+		#	if [[ "$kpr_our_rule_nu_local" -gt 500 ]]; then
+		#		break
+		#	else
+		#		echo_date kpr_our_rule规则文件下载失败
+		#		koolproxyR_basic_easylist_failed=1
+		#	fi
+		#done
+		
 		# expr 进行运算，将统计到的规则条数相加 如果条数大于 10000 条就说明下载完毕
-		easylistchina_rule_local=`expr $kpr_our_rule_nu_local + $cjx_rule_nu_local + $easylistchina_rule_nu_local`
+		#easylistchina_rule_local=`expr $kpr_our_rule_nu_local + $cjx_rule_nu_local + $easylistchina_rule_nu_local`
+		easylistchina_rule_local=`expr $cjx_rule_nu_local + $easylistchina_rule_nu_local`
 		cat /tmp/cjx-annoyance.txt >> /tmp/easylistchina.txt
 		rm /tmp/cjx-annoyance.txt
 		easylist_rules_local=`cat $KSROOT/koolproxy/data/rules/easylistchina.txt  | sed -n '3p'|awk '{print $3,$4}'`
@@ -365,7 +367,7 @@ kpr_update_rules() {
 			fi
 		done	
 
-                cp $KSROOT/koolproxy/data/rules/fanboy-annoyance.txt $KSROOT/koolproxy/data/rules/fanboy.txt
+        cp $KSROOT/koolproxy/data/rules/fanboy-annoyance.txt $KSROOT/koolproxy/data/rules/fanboy.txt
 	else
 		echo_date 跳过优化 fanboy规则。。。。。
 	fi
@@ -451,7 +453,7 @@ kpr_update_rules() {
 				koolproxyR_del_rule=0
 			fi
 		done	
-		cat $KSROOT/koolproxy/data/rules/kpr_our_rule.txt >> $KSROOT/koolproxy/data/rules/easylistchina.txt
+		#cat $KSROOT/koolproxy/data/rules/kpr_our_rule.txt >> $KSROOT/koolproxy/data/rules/easylistchina.txt
 
 	else
 		echo_date 跳过优化 KPR主规则。。。。。
@@ -597,4 +599,5 @@ if [ $RESTART_KOOLPROXY ]; then
 fi
 
 init_env
+
 
