@@ -387,30 +387,6 @@ function(o,a,i)
 end
 )
 
-t=o:section(TypedSection,"rss_rule",translate("Technical Support"),translate("本软件由KPR提供技术支持"))
 
-t.anonymous = true
-
-e=t:option(Button, "webe")
-e.title = translate("koolproxyR开源项目")
-e.inputtitle = translate("点击前往")
-e.inputstyle = "apply"
-e.write = function()
-	luci.http.redirect("https://github.com/user1121114685/koolproxyR")
-end
-e=t:option(Button, "web")
-e.title = translate("koolproxyR使用说明")
-e.inputtitle = translate("点击前往")
-e.inputstyle = "apply"
-e.write = function()
-	luci.http.redirect("https://shaoxia.xyz/post/koolproxyr%E6%8C%87%E5%8D%97/")
-end
-e=t:option(Button, "Donate")
-e.title = translate("koolproxyR交流群")
-e.inputtitle = translate("加入telegram群")
-e.inputstyle = "apply"
-e.write = function()
-	luci.http.redirect("https://t.me/koolproxyR")
-end
 
 return o
